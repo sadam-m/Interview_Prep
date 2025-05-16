@@ -3,7 +3,7 @@ package interviewQuestions.streams;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class TestEven {
+public class TestEvenWithLimit {
 
     public static void main(String[] args) {
 

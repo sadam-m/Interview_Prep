@@ -10,6 +10,8 @@ public class TestHashMap {
 
         Map<Integer,Integer> hashMap=new Hashtable<>();
 
+        System.out.println(hashMap.size());
 
+        
     }
 }

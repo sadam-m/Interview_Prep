@@ -3,6 +3,8 @@ package interviewQuestions;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
+
 import interviewQuestions.BookSortByAuthorCompartor;
 import interviewQuestions.BookSortByTitleCompartor;
 
@@ -14,6 +16,20 @@ public class Book {
     Book(String title,String author){
         this.title=title;
         this.author=author;
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(this.title,this.author);
+    }
+
+    @Override
+    public boolean equals(Object object){
+
+        if (this==object) return  true;
+        if (object==null || getClass()!=object.getClass()) return  false;
+        Book obj=(Book)object;
+        return  this.title.equals(obj.title) && this.author.equals(obj.author);
     }
 
     public static void main(String[] args) {
@@ -53,6 +69,14 @@ public class Book {
         for (Book book:books){
             System.out.println(book.author+" "+book.title);
         }
+
+//        Equals method
+        Book book4=new Book("hello","world");
+        Book book5=new Book("hello","world");
+
+        System.out.println("equals() check");
+
+        System.out.println(book4==book5);
 
     }
 }
